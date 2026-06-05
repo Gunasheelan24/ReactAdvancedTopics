@@ -1,17 +1,24 @@
-import React from "react";
-import LandingPage from "./features/landing/page/Index";
-
+import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Blog from "./features/blogs/Index";
+
+// Lazy Loading
+const LandingPage = lazy(() => import("./features/landing/page/Index"));
+const Blog = lazy(() => import("./features/blogs/Index"));
+const ErrorPage = lazy(() => import("./features/landing/Index"));
 
 const App: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/landing-page" element={<LandingPage />} />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/landing-page" element={<LandingPage />} />
 
-      {/* Route params & Query param */}
-      <Route path="/blog/:user" element={<Blog />} />
-    </Routes>
+        {/* Route params & Query param */}
+        <Route path="/blog/:user" element={<Blog />} />
+
+        {/* WildCard Routes */}
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Suspense>
   );
 };
 

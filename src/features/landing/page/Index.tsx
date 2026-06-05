@@ -1,10 +1,16 @@
 import React from "react";
 import {
-  // Link,
   NavLink,
+  // Link,
+  // useNavigate
 } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
+  // const navigation = useNavigate();
+
+  // const handleSubmit = () => {
+  //   navigation("/home");
+  // };
   return (
     <>
       <header className="flex justify-center mt-4">
@@ -35,8 +41,13 @@ const LandingPage: React.FC = () => {
         </ul>
       </header>
 
-      {/* <p>Link Example </p>
-      <Link to="/home">Change url</Link> */}
+      {/* <p>Link Example </p> } */}
+      {/* <Link to="/home">Change url</Link> */}
+
+      {/* useNavigation Hook */}
+      {/* <button style={{ display: "block¡" }} onClick={() => handleSubmit()}>
+        Handle Submit
+      </button> */}
     </>
   );
 };

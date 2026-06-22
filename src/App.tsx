@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 // Lazy Loading
 const LandingPage = lazy(() => import("./features/landing/page/Index"));
-const Blog = lazy(() => import("./features/blogs/Index"));
+const Blog = lazy(() => import("./features/blogs/Index")); 
 const ErrorPage = lazy(() => import("./features/landing/Index"));
 
 const App: React.FC = () => {

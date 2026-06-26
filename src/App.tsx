@@ -6,7 +6,7 @@ const LandingPage = lazy(() => import("./features/landing/page/Index"));
 const Blog = lazy(() => import("./features/blogs/Index")); 
 const ErrorPage = lazy(() => import("./features/landing/Index"));
 
-const App: React.FC = () => {
+const App: React.FC = () => { 
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
